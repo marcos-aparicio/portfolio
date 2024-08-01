@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --distance: 30vw;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap {
+  transform: translateX(-10vw) translateY(10vh);
+}
+.line {
+  overflow: visible;
+  position: relative;
+  display: flex;
+}
+.left,
+.right {
+  width: var(--distance);
+  overflow: hidden;
+  display: inline-block;
+}
+.left {
+  @apply text-orange-500;
+  transform: skew(0deg, -15deg);
+}
+.right {
+  @apply text-black;
+  transform: skew(0deg, 15deg);
+}
+.left .content {
+  width: calc(var(--distance) * 2);
+  text-align: center;
+}
+.right .content {
+  width: calc(var(--distance) * 2);
+  text-align: center;
+  /* transform: translateX(calc(var(--distance) * -1)); */
+  transform: translateX(calc(var(--distance) * -1));
+}
+span {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 5.5vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.8;
+  transition: ease-out 0.6s;
+}
