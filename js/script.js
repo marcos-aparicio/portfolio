@@ -27,3 +27,14 @@ function handleMouseMove(e) {
 function handleWindowResize() {
   width = window.innerWidth;
 }
+
+import Alpine from "alpinejs";
+import "@fortawesome/fontawesome-free";
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+library.add(faMoon);

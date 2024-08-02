@@ -3,20 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --distance: 30vw;
+  --distance: 25vw;
 }
 * {
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
 }
 body {
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .wrap {
-  transform: translateX(-10vw) translateY(10vh);
+  transform: translateY(10vh);
 }
 .line {
   overflow: visible;
@@ -55,4 +54,31 @@ span {
   text-transform: uppercase;
   line-height: 0.8;
   transition: ease-out 0.6s;
+}
+.job span {
+  font-size: 3.5vw !important;
+}
+
+ul li {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+ul li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: orangered;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
