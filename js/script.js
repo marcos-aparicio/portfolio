@@ -35,6 +35,19 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-library.add(faMoon);
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+library.add(faMoon, faSun);
+
+// extracted from https://www.youtube.com/watch?v=vIBKSmWAdIA&ab_channel=TomIsLoading
+
+const selectedTheme = localStorage.getItem("theme");
+
+if (selectedTheme) {
+  document.body.classList.add(selectedTheme);
+} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  document.body.classList.add("theme-dark");
+} else {
+  localStorage.setItem("theme", "theme-light");
+  document.body.classList.add("theme-light");
+}

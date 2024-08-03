@@ -29,11 +29,10 @@ body {
   display: inline-block;
 }
 .left {
-  @apply text-orange-500;
+  @apply text-primary;
   transform: skew(0deg, -15deg);
 }
 .right {
-  @apply text-black;
   transform: skew(0deg, 15deg);
 }
 .left .content {
@@ -59,13 +58,13 @@ span {
   font-size: 3.5vw !important;
 }
 
-ul li {
+.underline-effect {
   display: inline-block;
   position: relative;
   cursor: pointer;
 }
 
-ul li::after {
+.underline-effect::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -73,12 +72,35 @@ ul li::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: orangered;
+  background-color: var(--primary);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
 
-ul li:hover::after {
+.underline-effect:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.theme-light {
+  /* font color variables */
+  --primary: theme("colors.orange.500");
+  --secondary: theme("colors.gray.700");
+  color: theme("colors.black") !important;
+
+  /* background color variables */
+  --surface: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.theme-dark {
+  /* font color variables */
+  --primary: theme("colors.orange.600");
+  --secondary: theme("colors.gray.300");
+  color: theme("colors.white") !important;
+
+  /* background color variables */
+  --surface: theme("colors.gray.950");
+  --base: theme("colors.slate.950");
+  background-color: var(--surface) !important;
 }

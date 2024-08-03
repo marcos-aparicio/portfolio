@@ -14,15 +14,15 @@
   </head>
   <body class="relative min-h-screen">
     <aside
-      class="fixed left-0 top-0 z-50 flex h-full flex-col justify-between p-2 shadow-2xl"
+      class="fixed left-0 top-0 z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary"
     >
       <div></div>
-      <ul class="flex flex-col gap-4 px-8 text-lg font-bold text-gray-600">
-        <li>
+      <ul class="flex flex-col gap-4 px-8 text-lg font-bold text-secondary">
+        <li class="underline-effect">
           <svg
             width="159.60255mm"
             height="191.71155mm"
-            class="mx-auto h-16 w-fit rounded fill-orange-500 object-contain p-2 text-orange-500"
+            class="mx-auto h-16 w-fit rounded fill-primary object-contain p-2 text-primary"
             viewBox="0 0 159.60255 191.71155"
             version="1.1"
             id="svg1"
@@ -94,15 +94,38 @@
             </g>
           </svg>
         </li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
-        <li>Props</li>
+        <li class="underline-effect">About</li>
+        <li class="underline-effect">Skills</li>
+        <li class="underline-effect">Projects</li>
+        <li class="underline-effect">Contact</li>
+        <li class="underline-effect">Props</li>
       </ul>
-      <div class="flex items-center justify-around">
-        <p>ES</p>
-        <i class="fa-solid fa-moon"></i>
+      <div
+        class="flex items-center justify-around"
+        x-data="{
+        selectedTheme: localStorage.getItem('theme') ?? 'theme-light'
+        }"
+      >
+        <p class="underline-effect">ES</p>
+        <i
+          class="fa-solid fa-moon underline-effect"
+          x-ref="icon"
+          x-on:click="()=>{
+            if(selectedTheme == 'theme-dark'){
+            $refs.icon.classList.remove('fa-sun');
+            $refs.icon.classList.add('fa-moon');
+              document.body.classList.remove('theme-dark');
+              selectedTheme = 'theme-light';
+            } else {
+              $refs.icon.classList.remove('fa-moon');
+              $refs.icon.classList.add('fa-sun');
+              document.body.classList.remove('theme-light');
+              selectedTheme = 'theme-dark';
+            }
+            localStorage.setItem('theme',selectedTheme);
+            document.body.classList.add(selectedTheme);
+          }"
+        ></i>
       </div>
     </aside>
     <section id="first" class="w-svw flex px-16">
@@ -110,7 +133,7 @@
         <svg
           width="159.60255mm"
           height="191.71155mm"
-          class="mx-auto mb-32 h-64 w-fit rounded bg-orange-500 fill-orange-500 object-contain p-8 text-white"
+          class="mx-auto mb-32 h-64 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
           style="border-radius: 2.5rem"
           viewBox="0 0 159.60255 191.71155"
           version="1.1"
