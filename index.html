@@ -105,10 +105,14 @@
         x-data="{
         selectedTheme: localStorage.getItem('theme') ?? 'theme-light'
         }"
+        x-init="()=>{
+        icon= localStorage.getItem('theme') == 'theme-dark' || window.matchMedia('(prefers-color-scheme: dark)').matches ? 'fa-sun' : 'fa-moon';
+        $refs.icon.classList.add(icon);
+        }"
       >
         <p class="underline-effect">ES</p>
         <i
-          class="fa-solid fa-moon underline-effect"
+          class="fa-solid underline-effect"
           x-ref="icon"
           x-on:click="()=>{
             if(selectedTheme == 'theme-dark'){
