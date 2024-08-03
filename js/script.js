@@ -52,3 +52,28 @@ if (selectedTheme) {
   localStorage.setItem("theme", "theme-light");
   document.body.classList.add("theme-light");
 }
+
+// assuming each section corresponds to a nav item
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll("aside ul li");
+const main = document.querySelector("main");
+function sectionWatcher(section, index, sections) {
+  // padding to consider for the section to be considered active(since there's a dead space between sections)
+  const padding = 150;
+  if (
+    (main.scrollTop <= section.offsetTop + section.offsetHeight &&
+      main.scrollTop >= section.offsetTop) ||
+    (main.scrollTop + padding <= section.offsetTop + section.offsetHeight &&
+      main.scrollTop + padding >= section.offsetTop)
+  ) {
+    navItems[index].classList.add("text-primary");
+  } else {
+    navItems[index].classList.remove("text-primary");
+  }
+}
+window.onload = () => {
+  sections.forEach(sectionWatcher);
+};
+main.addEventListener("scroll", () => {
+  sections.forEach(sectionWatcher);
+});

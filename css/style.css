@@ -45,6 +45,7 @@ body {
   /* transform: translateX(calc(var(--distance) * -1)); */
   transform: translateX(calc(var(--distance) * -1));
 }
+
 span {
   display: inline-block;
   font-family: "Montserrat", sans-serif;

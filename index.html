@@ -12,95 +12,103 @@
     />
     <link href="css/style.css" rel="stylesheet" />
   </head>
-  <body class="relative min-h-screen">
+  <body class="relative flex h-screen justify-around overflow-hidden">
     <aside
-      class="fixed left-0 top-0 z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary"
+      class="sticky z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary"
+      style="position: sticky; top: 0"
     >
       <div></div>
       <ul class="flex flex-col gap-4 px-8 text-lg font-bold text-secondary">
         <li class="underline-effect">
-          <svg
-            width="159.60255mm"
-            height="191.71155mm"
-            class="mx-auto h-16 w-fit rounded fill-primary object-contain p-2 text-primary"
-            viewBox="0 0 159.60255 191.71155"
-            version="1.1"
-            id="svg1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:svg="http://www.w3.org/2000/svg"
-            stroke="currentColor"
-            fill="currentColor"
-          >
-            <defs id="defs1" />
-            <g id="layer1" transform="translate(-20.198727,-4.1442275)">
-              <g id="g23" transform="translate(3.5810906,3.2023229)">
-                <path
-                  style="
-                    fill-opacity: 0;
-                    stroke-width: 17.9362;
-                    stroke-linecap: round;
-                    stroke-linejoin: round;
-                    stroke-dasharray: none;
-                    stroke-opacity: 1;
-                    paint-order: stroke fill markers;
-                  "
-                  d="M 165.53547,183.68535 V 157.09276 L 164.4781,37.556772 c -18.06801,0 -61.43613,25.972794 -71.858595,59.385921 -6.249408,20.034857 -5.642767,58.823117 -5.642767,86.742657"
-                  id="path9"
-                />
-                <path
-                  style="
-                    fill-opacity: 0;
-                    stroke-width: 17.9362;
-                    stroke-linecap: round;
-                    stroke-linejoin: round;
-                    stroke-dasharray: none;
-                    stroke-opacity: 1;
-                    paint-order: fill markers stroke;
-                  "
-                  d="M 93.099082,90.294938 C 63.670347,46.530365 40.004838,34.789697 25.585728,34.789697 l 0.409664,48.561292 0.0458,100.334361"
-                  id="path18"
-                />
-                <path
-                  style="
-                    fill-opacity: 0;
-                    stroke-width: 15.2986;
-                    stroke-linecap: round;
-                    stroke-linejoin: round;
-                    stroke-dasharray: none;
-                    stroke-opacity: 1;
-                    paint-order: fill markers stroke;
-                  "
-                  d="m 93.011801,100.13227 c 20.358769,-0.0107 40.717529,-0.0214 61.076299,-0.0321"
-                  id="path19"
-                  transform="matrix(1.1495205,0,0,1.1957459,-15.66922,-1.9818232)"
-                />
-                <ellipse
-                  style="
-                    fill-opacity: 0.966102;
-                    stroke-width: 7.40767;
-                    stroke-linecap: round;
-                    stroke-linejoin: round;
-                    stroke-dasharray: none;
-                    stroke-opacity: 1;
-                    paint-order: stroke fill markers;
-                  "
-                  id="path22"
-                  ry="8.7961674"
-                  rx="8.7961636"
-                  cy="13.441907"
-                  cx="163.72018"
-                />
+          <a href="#first">
+            <svg
+              width="159.60255mm"
+              height="191.71155mm"
+              class="mx-auto h-16 w-fit rounded object-contain p-2"
+              viewBox="0 0 159.60255 191.71155"
+              version="1.1"
+              id="svg1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:svg="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              fill="currentColor"
+            >
+              <defs id="defs1" />
+              <g id="layer1" transform="translate(-20.198727,-4.1442275)">
+                <g id="g23" transform="translate(3.5810906,3.2023229)">
+                  <path
+                    style="
+                      fill-opacity: 0;
+                      stroke-width: 17.9362;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                      paint-order: stroke fill markers;
+                    "
+                    d="M 165.53547,183.68535 V 157.09276 L 164.4781,37.556772 c -18.06801,0 -61.43613,25.972794 -71.858595,59.385921 -6.249408,20.034857 -5.642767,58.823117 -5.642767,86.742657"
+                    id="path9"
+                  />
+                  <path
+                    style="
+                      fill-opacity: 0;
+                      stroke-width: 17.9362;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                      paint-order: fill markers stroke;
+                    "
+                    d="M 93.099082,90.294938 C 63.670347,46.530365 40.004838,34.789697 25.585728,34.789697 l 0.409664,48.561292 0.0458,100.334361"
+                    id="path18"
+                  />
+                  <path
+                    style="
+                      fill-opacity: 0;
+                      stroke-width: 15.2986;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                      paint-order: fill markers stroke;
+                    "
+                    d="m 93.011801,100.13227 c 20.358769,-0.0107 40.717529,-0.0214 61.076299,-0.0321"
+                    id="path19"
+                    transform="matrix(1.1495205,0,0,1.1957459,-15.66922,-1.9818232)"
+                  />
+                  <ellipse
+                    style="
+                      fill-opacity: 0.966102;
+                      stroke-width: 7.40767;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                      paint-order: stroke fill markers;
+                    "
+                    id="path22"
+                    ry="8.7961674"
+                    rx="8.7961636"
+                    cy="13.441907"
+                    cx="163.72018"
+                  />
+                </g>
               </g>
-            </g>
-          </svg>
+            </svg>
+          </a>
         </li>
         <li class="underline-effect">
-          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
         </li>
-        <li class="underline-effect">Projects</li>
-        <li class="underline-effect">Work</li>
-        <li class="underline-effect">Contact</li>
-        <li class="underline-effect">Props</li>
+        <li class="underline-effect">
+          <a href="#work">Work</a>
+        </li>
+        <li class="underline-effect">
+          <a href="#contact">Contact</a>
+        </li>
+        <li class="underline-effect">
+          <a href="#props">Props</a>
+        </li>
       </ul>
       <div
         class="flex items-center justify-around"
@@ -108,14 +116,15 @@
         selectedTheme: localStorage.getItem('theme') ?? 'theme-light'
         }"
         x-init="()=>{
-        icon= localStorage.getItem('theme') == 'theme-dark' || window.matchMedia('(prefers-color-scheme: dark)').matches ? 'fa-sun' : 'fa-moon';
-        $refs.icon.classList.add(icon);
+          let icon = 'fa-moon';
+          if(localStorage.getItem('theme') == 'theme-light') icon = 'fa-moon';
+          else if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('theme') == 'theme-dark') icon = 'fa-sun';
+
+          $refs.icon.classList.add(icon);
         }"
       >
         <p class="underline-effect">ES</p>
-        <i
-          class="fa-solid underline-effect"
-          x-ref="icon"
+        <button
           x-on:click="()=>{
             if(selectedTheme == 'theme-dark'){
             $refs.icon.classList.remove('fa-sun');
@@ -131,10 +140,14 @@
             localStorage.setItem('theme',selectedTheme);
             document.body.classList.add(selectedTheme);
           }"
-        ></i>
+        >
+          <i class="fa-solid underline-effect" x-ref="icon"></i>
+        </button>
       </div>
     </aside>
-    <main class="w-svw flex flex-col gap-16 px-44">
+    <main
+      class="w-svw flex flex-col gap-32 overflow-scroll scroll-smooth px-16"
+    >
       <section id="first" class="min-h-svh flex">
         <div class="wrap flex flex-col items-start" id="left-part">
           <svg
