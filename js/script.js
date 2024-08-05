@@ -36,8 +36,13 @@ window.Alpine = Alpine;
 Alpine.start();
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-library.add(faMoon, faSun);
+import { faMoon, faSun, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faMastodon,
+} from "@fortawesome/free-brands-svg-icons";
+library.add(faMoon, faSun, faGithub, faLinkedin, faMastodon, faEnvelope);
 
 // extracted from https://www.youtube.com/watch?v=vIBKSmWAdIA&ab_channel=TomIsLoading
 
@@ -77,3 +82,26 @@ window.onload = () => {
 main.addEventListener("scroll", () => {
   sections.forEach(sectionWatcher);
 });
+
+// const contactEntries = document.querySelectorAll(".contact-item");
+// contactEntries.forEach((entry) => {
+//   entry.onmousemove = (e) => {
+//     var rect = document.body.getBoundingClientRect(); // Get the position of the element
+//     var rXP = e.pageX - rect.left - entry.offsetWidth;
+//     var rYP = e.pageY - rect.top - entry.offsetHeight;
+//     entry.style.textShadow =
+//       +rYP / 10 +
+//       "px " +
+//       rXP / 80 +
+//       "px rgba(227,6,19,.8), " +
+//       rYP / 8 +
+//       "px " +
+//       rXP / 60 +
+//       "px rgba(255,237,0,1), " +
+//       rXP / 70 +
+//       "px " +
+//       rYP / 12 +
+//       "px rgba(0,159,227,.7)";
+//   };
+// });
+// console.log(contactEntries);
