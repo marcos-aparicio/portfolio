@@ -17,6 +17,7 @@
       class="sticky z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary"
       style="position: sticky; top: 0"
     >
+      <!--extremely important empty div-->
       <div></div>
       <ul class="flex flex-col gap-4 px-8 text-lg font-bold text-secondary">
         <li class="underline-effect">
@@ -309,25 +310,101 @@
         <p>Built with 🧡 using AlpineJS, Neovim, Tailwind and Vite</p>
       </section>
       <section id="work" class="min-h-svh py-8">
-        <p class="text-8xl font-bold">Work</p>
-        <p class="text-2xl">
-          I like to recognize when I am not the original author of an idea, for
-          this website I <strong>definitely</strong> used some code from other
-          people, I don't think they'll ever see this but I want to acknowledge
-          how my website was inspired from that code.
-        </p>
-
-        <ul>
-          <li>example 1</li>
-          <li>example 2</li>
-        </ul>
-
-        <p>Built with 🧡 using AlpineJS, Neovim, Tailwind and Vite</p>
+        <section id="work" class="h-48" x-data="projectsData">
+          <h2 class="mb-8 text-8xl font-bold">Work</h2>
+          <p class="px-4 text-xl">
+            While some of my work remains confidential, I’ve had the opportunity
+            to work extensively with <strong>React</strong> in front-end
+            development and gain exposure to backend systems using
+            <strong>Django</strong>. Although I’m still early in my development
+            journey, I’ve built a strong understanding of
+            <strong>Git</strong> for version control, with repositories hosted
+            on platforms like <strong>Github</strong>. Below are some of the
+            projects I’m able to share, where I applied and expanded my skill
+            set:
+          </p>
+          <div class="relative flex overflow-x-hidden">
+            <div class="z-10 order-1 flex items-center bg-surface px-4 py-2">
+              <div
+                class="text-2xl text-primary opacity-50 hover:opacity-100"
+                @click="currentProject = (currentProject - 1 + projects.length) % projects.length"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </div>
+            </div>
+            <div class="z-10 order-3 flex items-center bg-surface">
+              <div
+                class="text-2xl text-primary opacity-50 hover:opacity-100"
+                @click="currentProject = (currentProject + 1) % projects.length"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+            <div
+              class="order-2 flex transition-transform duration-300 ease-in-out"
+              :style="{ transform: `translateX(-${currentProject * 100}%)` }"
+            >
+              <template x-for="(project, index) in projects" :key="index">
+                <div class="w-full flex-shrink-0 p-4">
+                  <div
+                    class="rounded-lg bg-surface p-6 shadow-[0px_0px_10px_1px_primary] shadow-primary"
+                  >
+                    <h3
+                      class="mb-4 text-4xl font-bold"
+                      x-text="project.title"
+                    ></h3>
+                    <div class="flex justify-between">
+                      <div class="flex flex-col">
+                        <p class="mb-4 text-xl">
+                          <strong>Tech Stack:</strong>
+                          <span x-text="project.stack"></span>
+                        </p>
+                        <p
+                          class="mb-4 text-lg"
+                          x-text="project.description"
+                        ></p>
+                        <h4 class="mb-2 text-2xl font-semibold">
+                          Technical Details:
+                        </h4>
+                        <ul class="mb-4 list-inside list-disc">
+                          <template
+                            x-for="detail in project.details"
+                            :key="detail"
+                          >
+                            <li class="text-md" x-text="detail"></li>
+                          </template>
+                        </ul>
+                      </div>
+                      <div class="rounded-lg bg-primary">
+                        <!-- Placeholder for project video -->
+                        <p class="text-center">Project Video Placeholder</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="mt-4 flex justify-center">
+            <button
+              @click="currentProject = (currentProject - 1 + projects.length) % projects.length"
+              class="rounded-l-lg bg-primary px-4 py-2 text-white"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              @click="currentProject = (currentProject + 1) % projects.length"
+              class="rounded-r-lg bg-primary px-4 py-2 text-white"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
       </section>
       <section id="contact" class="min-h-svh flex flex-col gap-8 py-8">
         <p class="text-center text-8xl font-bold">Contact</p>
         <p class="text-center text-3xl">
-          Greeting, suggestions or anything you want. Let's get to work 🧑‍💻
+          Greetings, suggestions or anything you want. Let's get to work 🧑‍💻
         </p>
 
         <div

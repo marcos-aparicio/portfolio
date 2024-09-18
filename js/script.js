@@ -30,19 +30,36 @@ function handleWindowResize() {
 
 import Alpine from "alpinejs";
 import "@fortawesome/fontawesome-free";
+import data from "./data.js";
 
 window.Alpine = Alpine;
+Alpine.data("projectsData", data);
 
 Alpine.start();
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faMoon, faSun, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon,
+  faSun,
+  faEnvelope,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
   faMastodon,
 } from "@fortawesome/free-brands-svg-icons";
-library.add(faMoon, faSun, faGithub, faLinkedin, faMastodon, faEnvelope);
+library.add(
+  faMoon,
+  faSun,
+  faGithub,
+  faLinkedin,
+  faMastodon,
+  faEnvelope,
+  faChevronLeft,
+  faChevronRight,
+);
 
 // extracted from https://www.youtube.com/watch?v=vIBKSmWAdIA&ab_channel=TomIsLoading
 
