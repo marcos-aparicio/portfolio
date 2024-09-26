@@ -1,3 +1,5 @@
+@import url("./themes.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,36 @@
 :root {
   --distance: 25vw;
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+.fade-out-down {
+  animation: fadeOutDown 0.5s ease-out;
+}
+
 * {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -93,7 +125,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--primary);
+  background-color: rgba(var(--primary));
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -101,27 +133,4 @@ body {
 .underline-effect:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-
-.theme-light {
-  /* font color variables */
-  --primary: theme("colors.orange.500");
-  --secondary: theme("colors.gray.700");
-  color: theme("colors.black") !important;
-
-  /* background color variables */
-  --surface: rgb(255, 255, 255);
-  background-color: rgb(255, 255, 255) !important;
-}
-
-.theme-dark {
-  /* font color variables */
-  --primary: theme("colors.orange.600");
-  --secondary: theme("colors.gray.300");
-  color: theme("colors.white") !important;
-
-  /* background color variables */
-  --surface: theme("colors.gray.950");
-  --base: theme("colors.slate.950");
-  background-color: var(--surface) !important;
 }

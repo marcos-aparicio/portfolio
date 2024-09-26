@@ -1,0 +1,23 @@
+.theme-light {
+  /* font color variables */
+  --primary: 249, 116, 21; /*  theme("colors.orange.500"); */
+  --secondary: theme("colors.gray.700");
+  color: theme("colors.black") !important;
+
+  /* background color variables */
+  --surface: theme("colors.white");
+  --base: theme("colors.gray.100");
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.theme-dark {
+  /* font color variables */
+  --primary: 233, 89, 12; /* theme("colors.orange.600"); */
+  --secondary: theme("colors.gray.300");
+  color: theme("colors.white") !important;
+
+  /* background color variables */
+  --surface: theme("colors.slate.900");
+  --base: theme("colors.gray.950");
+  background-color: var(--surface) !important;
+}

@@ -24,6 +24,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "alpinejs": "^3.14.1"
+    "alpinejs": "^3.14.1",
+    "alpinejs-component": "^1.2.7"
   }
 }

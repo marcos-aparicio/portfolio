@@ -36,4 +36,15 @@ export default () => ({
       ],
     },
   ],
+  nextProject() {
+    this.currentProject = (this.currentProject + 1) % this.projects.length;
+  },
+  prevProject() {
+    this.currentProject =
+      (this.currentProject - 1 + this.projects.length) % this.projects.length;
+  },
+  goToProject(index) {
+    if (index < 0 || index >= this.projects.length) return;
+    this.currentProject = index;
+  },
 });
