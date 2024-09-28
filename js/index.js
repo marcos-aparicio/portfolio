@@ -4,10 +4,11 @@ import data from "./data.js";
 // functionality
 import "./other/theme-switcher.js";
 
-import "./sections/hero.js";
+import "./sections";
 // last web component to be imported should be the navbar
 import "./components/navbar.js";
 
+// starting alpine
 window.Alpine = Alpine;
 Alpine.data("projectsData", data);
 
