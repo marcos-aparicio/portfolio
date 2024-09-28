@@ -1,7 +1,7 @@
 import { throttle } from "../helpers";
 function parallaxEffect(scrollPos) {
   // container that holds the image to produce the parallax effect
-  let parallax = document.querySelector(".parallax");
+  let parallax = document.getElementById("parallax");
   parallax.style.backgroundPositionY = `-${scrollPos * 0.2}px`;
 }
 

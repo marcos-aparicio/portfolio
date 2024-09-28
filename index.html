@@ -19,10 +19,16 @@
     ></script>
   </head>
   <body class="relative flex h-screen justify-around overflow-hidden">
+    <div
+      class="absolute top-0 left-0 bg-cover bg-center opacity-10 inset-0"
+      id="parallax"
+      style="
+        background-image: url(&quot;https://w0.peakpx.com/wallpaper/159/115/HD-wallpaper-vivo-iqoo-neo-abej-abstract-beograd-blue-dark-edge.jpg&quot;);
+      "
+    ></div>
     <nav-bar></nav-bar>
-    <div class="parallax"></div>
     <main
-      class="w-svw flex flex-col gap-32 overflow-scroll scroll-smooth px-16"
+      class="w-svw flex flex-col gap-32 overflow-scroll scroll-smooth px-16 z-5 relative"
     >
       <hero-section></hero-section>
       <projects-section></projects-section>
@@ -30,6 +36,7 @@
       <contact-section></contact-section>
       <props-section></props-section>
     </main>
+
     <!-- Scripts -->
     <script src="js/index.js" type="module"></script>
   </body>
