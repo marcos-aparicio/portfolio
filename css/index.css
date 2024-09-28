@@ -16,13 +16,6 @@
   margin: 0;
   padding: 0;
 }
-body {
-  height: 100vh;
-  display: flex;
-}
-.wrap {
-  transform: translateY(10vh);
-}
 .left {
   @apply text-primary;
 }
@@ -42,16 +35,9 @@ body {
   @apply hover:text-primary;
   @apply rounded-xl;
 }
-.contact-item svg {
-  @apply text-6xl;
-}
-
-.job span {
-  font-size: 3.5vw !important;
-}
 
 .underline-effect {
-  display: inline-block;
+  display: inline-flex;
   position: relative;
   cursor: pointer;
 }
