@@ -7,6 +7,9 @@
 :root {
   --distance: 25vw;
 }
+[x-cloak] {
+  display: none;
+}
 
 @keyframes fadeInUp {
   from {
@@ -74,7 +77,6 @@ body {
 .right .content {
   width: calc(var(--distance) * 2);
   text-align: center;
-  /* transform: translateX(calc(var(--distance) * -1)); */
   transform: translateX(calc(var(--distance) * -1));
 }
 
@@ -133,4 +135,15 @@ body {
 .underline-effect:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+.parallax {
+  background: url("https://w0.peakpx.com/wallpaper/159/115/HD-wallpaper-vivo-iqoo-neo-abej-abstract-beograd-blue-dark-edge.jpg");
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
 }
