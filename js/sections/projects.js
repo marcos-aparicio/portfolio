@@ -49,6 +49,5 @@ const tryFetch = async () => {
   const pepe = await fetch(url);
   const data = await pepe.json();
   const myProjects = data.filter((p) => p.fork === false);
-  console.log(myProjects);
 };
 tryFetch();

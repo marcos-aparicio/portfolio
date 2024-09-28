@@ -11,35 +11,6 @@
   display: none;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeOutDown {
-  from {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.5s ease-out;
-}
-.fade-out-down {
-  animation: fadeOutDown 0.5s ease-out;
-}
-
 * {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -52,32 +23,8 @@ body {
 .wrap {
   transform: translateY(10vh);
 }
-.line {
-  overflow: visible;
-  position: relative;
-  display: flex;
-}
-.left,
-.right {
-  width: var(--distance);
-  overflow: hidden;
-  display: inline-block;
-}
 .left {
   @apply text-primary;
-  transform: skew(0deg, -15deg);
-}
-.right {
-  transform: skew(0deg, 15deg);
-}
-.left .content {
-  width: calc(var(--distance) * 2);
-  text-align: center;
-}
-.right .content {
-  width: calc(var(--distance) * 2);
-  text-align: center;
-  transform: translateX(calc(var(--distance) * -1));
 }
 
 .contact-item {
@@ -99,16 +46,6 @@ body {
   @apply text-6xl;
 }
 
-.spanSlow,
-.spanFast {
-  display: inline-block;
-  font-family: "Montserrat", sans-serif;
-  font-size: 5.5vw;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 0.8;
-  transition: ease-out 0.6s;
-}
 .job span {
   font-size: 3.5vw !important;
 }
@@ -135,15 +72,4 @@ body {
 .underline-effect:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-.parallax {
-  background: url("https://w0.peakpx.com/wallpaper/159/115/HD-wallpaper-vivo-iqoo-neo-abej-abstract-beograd-blue-dark-edge.jpg");
-  background-size: cover;
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.1;
 }
