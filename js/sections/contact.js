@@ -1,4 +1,29 @@
+import Alpine from "alpinejs";
 const COMPONENT_NAME = "contact-section";
+
+const socialMediaLinks = [
+  {
+    icon: "fa-brands fa-github",
+    url: "https://github.com/marcos-aparicio",
+    name: "marcos-aparicio",
+  },
+  {
+    icon: "fa-solid fa-envelope",
+    url: "mailto:marcos.aparicio1@outlook.com",
+    name: "marcos.aparicio1@outlook.com",
+  },
+  {
+    icon: "fa-brands fa-linkedin",
+    url: "https://www.linkedin.com/in/marcos-aparicio",
+    name: "marcos-aparicio",
+  },
+  {
+    icon: "fa-brands fa-mastodon",
+    url: "https://mastodon.social/@marcos_aparicio",
+    name: "@marcos_aparicio",
+  },
+];
+Alpine.data("socialMediaLinks", () => ({ socialMediaLinks }));
 
 class Contact extends HTMLElement {
   constructor() {
@@ -7,51 +32,29 @@ class Contact extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <section id="contact" class="min-h-svh flex flex-col gap-8 py-8">
-        <p class="text-center text-8xl font-bold">Contact</p>
-        <p class="text-center text-3xl">
-          Greetings, suggestions or anything you want. Let's get to work 🧑‍💻
-        </p>
+  <section id="contact" class="min-h-svh flex flex-col gap-8 py-8">
+  <p class="text-center text-8xl font-bold">Contact</p>
+  <p class="text-center text-3xl">
+  Greetings, suggestions or anything you want. Let's get to work 🧑‍💻
+  </p>
 
-        <div
-          class="mx-auto flex w-fit flex-col justify-center gap-8 text-2xl"
-          class="contact-item"
+      <div
+        class="mx-auto flex w-fit flex-col justify-center gap-8 text-2xl"
+        x-data="socialMediaLinks"
         >
-          <a
-            href="mailto:marcos.aparicio1@outlook.com"
-            class="contact-item"
-            target="_blank"
-          >
-            <i class="fa-solid fa-envelope"></i>
-            <span>marcos.aparicio1@outlook.com</span>
-          </a>
-          <a
-            href="https://github.com/marcos-aparicio"
-            class="contact-item"
-            target="_blank"
-          >
-            <span>marcos-aparicio</span>
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/marcos-aparicio"
-            target="_blank"
-            class="contact-item"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-            <span>marcos-aparicio</span>
-          </a>
-          <a
-            href="https://mastodon.social/@marcos_aparicio"
-            target="_blank"
-            class="contact-item"
-          >
-            <span>@marcos_aparicio</span>
-            <i class="fa-brands fa-mastodon"></i>
-          </a>
-        </div>
-      </section>
-    `;
+        <template x-for="(link,i) in socialMediaLinks" :key="i">
+            <a
+              :href="link.url"
+              class="underline-effect flex items-center justify-between gap-16 text-3xl p-1 px-8 hover:text-primary rounded-xl"
+              target="_blank"
+            >
+              <span x-text="link.name" :class="i % 2 == 0 ? 'order-last' : ''"></span>
+              <i :class="link.icon" class="text-6xl"></i>
+            </a>
+        </template>
+      </div>
+    </section>
+`;
   }
 }
 

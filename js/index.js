@@ -1,6 +1,9 @@
 import Alpine from "alpinejs";
 import data from "./data.js";
 
+// starting alpine
+Alpine.data("projectsData", data);
+
 // functionality
 import "./other/theme-switcher.js";
 import "./other/parallax-effect.js";
@@ -11,6 +14,4 @@ import "./components/navbar.js";
 
 // starting alpine
 window.Alpine = Alpine;
-Alpine.data("projectsData", data);
-
 Alpine.start();
