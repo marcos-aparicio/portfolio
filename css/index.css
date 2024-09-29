@@ -20,22 +20,6 @@
   @apply text-primary;
 }
 
-.contact-item {
-  @apply underline-effect;
-
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  @apply gap-16;
-  @apply text-3xl;
-  @apply p-1;
-  @apply px-8;
-  /* @apply bg-primary; */
-  @apply hover:text-primary;
-  @apply rounded-xl;
-}
-
 .underline-effect {
   display: inline-flex;
   position: relative;
