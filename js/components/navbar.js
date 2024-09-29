@@ -118,7 +118,8 @@ class Navbar extends HTMLElement {
                 $refs.icon.classList.add(icon);
               }"
         >
-          <p class="underline-effect">ES</p>
+          <!-- TODO: implement multi language support for spanish in the future -->
+          <p class="!hidden underline-effect">ES</p>
           <button
             x-on:click="()=>{
                   if(selectedTheme == 'theme-dark'){

@@ -1,8 +1,4 @@
 import Alpine from "alpinejs";
-import data from "./data.js";
-
-// starting alpine
-Alpine.data("projectsData", data);
 
 // functionality
 import "./other/theme-switcher.js";

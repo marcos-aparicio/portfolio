@@ -1,5 +1,9 @@
+import Alpine from "alpinejs";
+import data from "./data.js";
+
 const COMPONENT_NAME = "work-section";
 
+Alpine.data("workProjectsData", data);
 class Work extends HTMLElement {
   constructor() {
     super();
@@ -19,11 +23,11 @@ class Work extends HTMLElement {
         platforms like <strong>Github</strong>. Below are some of the projects I’m
         able to share, where I applied and expanded my skill set:
       </p>
-      <div x-data="projectsData" class="relative px-4 py-12 sm:px-6 lg:px-8 flex-1 overflow-hidden">
+      <div x-data="workProjectsData" class="relative px-4 py-12 sm:px-6 lg:px-8 flex-1 overflow-hidden">
         <!-- Project Carousel Navigation -->
         <button
           @click="prevProject"
-          class="absolute top-1/2 left-5 rounded-full bg-base p-2 text-secondary shadow-md transition-all hover:bg-primary hover:shadow-lg"
+          class="absolute top-1/2 left-5 rounded-full bg-base p-2 text-secondary shadow-md transition-all hover:bg-primary hover:shadow-lg z-10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +63,7 @@ class Work extends HTMLElement {
 
         <button
           @click="nextProject"
-          class="absolute right-5 top-1/2 rounded-full bg-base p-2 text-secondary shadow-md transition-all hover:bg-primary hover:shadow-lg"
+          class="absolute right-5 top-1/2 rounded-full bg-base p-2 text-secondary shadow-md transition-all hover:bg-primary hover:shadow-lg z-10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
