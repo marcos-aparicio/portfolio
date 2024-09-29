@@ -154,7 +154,7 @@ const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll("nav-bar ul li");
 const main = document.querySelector("main");
 function sectionWatcher(section, index, sections) {
-  // padding to consider for the section to be considered active(since there's a dead space between sections)
+  // padding to consider for the section to be considered active(since there could be a dead space between sections)
   const padding = 150;
   if (
     (main.scrollTop <= section.offsetTop + section.offsetHeight &&

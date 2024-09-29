@@ -1,3 +1,4 @@
+// extracted from: https://www.sitepoint.com/throttle-scroll-events/
 /**
  * Throttles a function to only be called once within a specified time interval.
  *

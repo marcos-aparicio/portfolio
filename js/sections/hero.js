@@ -206,10 +206,7 @@ if (customElements.get(COMPONENT_NAME) === undefined)
 // setting up the cool effect from the name
 
 // The place I saw this effect:
-// https://angle2.agency/
-
-// Red Staper made a NICE tutorial about this effect! You should check it out!
-// https://www.youtube.com/watch?v=LgiadQQM6mo&t=5s
+// https://codepen.io/chenxinnn/pen/qGKPOE
 
 window.addEventListener("mousemove", handleMouseMove);
 window.addEventListener("resize", handleWindowResize);
