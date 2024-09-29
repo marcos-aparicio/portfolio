@@ -1,6 +1,10 @@
 const COMPONENT_NAME = "hero-section";
 const styles = `
     <style>
+        :root {
+          --distance: 20vw;
+        }
+
         .line {
           overflow: visible;
           position: relative;
@@ -57,7 +61,7 @@ class Hero extends HTMLElement {
           <svg
             width="159.60255mm"
             height="191.71155mm"
-            class="mx-auto mb-32 h-64 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
+            class="mx-auto mb-32 h-48 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
             style="border-radius: 2.5rem"
             viewBox="0 0 159.60255 191.71155"
             version="1.1"
@@ -187,8 +191,8 @@ class Hero extends HTMLElement {
           </div>
         </div>
         <div id="right-part" class="flex flex-col justify-center gap-32">
-          <h2 class="text-8xl font-bold">Hello Internet! 👋</h2>
-          <p class="text-2xl font-light">
+          <h2 class="text-6xl xl:text-8xl font-bold">Hello Internet! 👋</h2>
+          <p class="text-xl xl:text-2xl font-light">
             I am a programmer based on Hamilton Ontario, I like everything Linux
             related, know some stuff about website development and really keen on
             everything computer science related! Always looking for something else to

@@ -11,7 +11,7 @@ class Projects extends HTMLElement {
         <p class="text-8xl font-bold">Projects</p>
         <div
           x-data="{ projects: [] }"
-          class="flex flex-col flex-wrap gap-4 overflow-y-scroll"
+          class="flex flex-col flex-wrap gap-4 overflow-y-hidden overflow-x-scroll"
           x-init="
                   async () => {
                     const fetchProjects = async () => {

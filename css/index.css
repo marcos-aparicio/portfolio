@@ -4,9 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --distance: 25vw;
-}
 [x-cloak] {
   display: none;
 }
@@ -42,4 +39,8 @@
 .underline-effect:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+#menu-btn-container #menu-btn:checked ~ #submenu {
+  display: none !important;
 }

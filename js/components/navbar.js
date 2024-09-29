@@ -8,18 +8,16 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <aside
-        class="sticky z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary opacity-85"
+        class="sticky z-50 flex lg:justify-stretch flex-row lg:flex-col w-full  lg:w-fit lg:h-svh bg-base p-2 shadow-2xl shadow-primary lg:opacity-85 flex-wrap lg:flex-nowrap"
         style="position: sticky; top: 0"
       >
-        <!--extremely important empty div-->
-        <div></div>
-        <ul class="flex flex-col gap-4 px-8 text-lg font-bold text-secondary">
-          <li class="underline-effect">
-            <a href="#first">
+        <ul class="flex lg:h-full items-center justify-center lg:flex-col gap-4 px-4 md:px-8 text-lg font-bold text-secondary flex-1 lg:flex-none">
+          <li class="flex-1 lg:flex-none">
+            <a href="#first" class="underline-effect">
               <svg
                 width="159.60255mm"
                 height="191.71155mm"
-                class="mx-auto h-16 w-fit rounded object-contain p-2"
+                class="mx-auto h-12 md:h-16 w-fit rounded object-contain p-2"
                 viewBox="0 0 159.60255 191.71155"
                 version="1.1"
                 id="svg1"
@@ -92,21 +90,30 @@ class Navbar extends HTMLElement {
               </svg>
             </a>
           </li>
-          <li class="underline-effect">
-            <a href="#projects">Projects</a>
-          </li>
-          <li class="underline-effect">
-            <a href="#work">Work</a>
-          </li>
-          <li class="underline-effect">
-            <a href="#contact">Contact</a>
-          </li>
-          <li class="underline-effect">
-            <a href="#props">Props</a>
-          </li>
-        </ul>
+
+          <input type="checkbox" class="hidden peer" id="menu-btn"/>
+          <label for="menu-btn" class="cursor-pointer hidden peer-checked:flex" >
+            <i class="fa-solid fa-x"></i>
+          </label>
+          <label for="menu-btn" class="cursor-pointer peer-checked:hidden lg:hidden">
+            <i class="fa-solid fa-bars" for="menu-btn"></i>
+          </label>
+          <ul class="peer-checked:flex hidden absolute left-0 lg:static lg:flex flex-col gap-4 order-last lg:order-none  bg-base w-svw lg:w-fit z-10 p-4 lg:p-0 top-16">
+              <li class="underline-effect">
+                <a href="#projects">Projects</a>
+              </li>
+              <li class="underline-effect">
+                <a href="#work">Work</a>
+              </li>
+              <li class="underline-effect">
+                <a href="#contact">Contact</a>
+              </li>
+              <li class="underline-effect">
+                <a href="#props">Props</a>
+              </li>
+          </ul>
         <div
-          class="flex items-center justify-around"
+          class="flex items-center justify-around lg:absolute lg:bottom-2"
           x-data="{
               selectedTheme: localStorage.getItem('theme') ?? 'theme-light'
               }"
@@ -140,6 +147,8 @@ class Navbar extends HTMLElement {
             <i class="fa-solid underline-effect" x-ref="icon"></i>
           </button>
         </div>
+
+        </ul>
       </aside>
   `;
   }

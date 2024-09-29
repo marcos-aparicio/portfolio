@@ -18,9 +18,11 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="relative flex h-screen justify-around overflow-hidden">
+  <body
+    class="relative flex h-screen flex-col lg:flex-row justify-around overflow-hidden"
+  >
     <div
-      class="absolute top-0 left-0 bg-cover bg-bottom opacity-10 inset-0"
+      class="absolute top-0 left-0 bg-cover bg-bottom opacity-10 inset-0 bg-no-repeat"
       id="parallax"
       style="
         background-image: url(&quot;https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg&quot;);
@@ -28,17 +30,20 @@
     ></div>
     <nav-bar></nav-bar>
     <main
-      class="w-svw flex flex-col gap-32 overflow-scroll scroll-smooth px-16 z-5 relative"
+      class="w-svw flex flex-col gap-32 overflow-scroll scroll-smooth px-8 z-5 relative overflow-x-hidden"
     >
       <hero-section></hero-section>
       <projects-section></projects-section>
       <work-section></work-section>
       <contact-section></contact-section>
       <props-section></props-section>
-      <footer class="mx-auto pb-4 opacity-60 flex flex-col justify-center">
+      <footer
+        class="mx-auto pb-4 opacity-60 flex flex-col justify-center gap-4"
+      >
         <a
           href="https://www.pexels.com/photo/landscape-photography-of-tree-s-reflection-on-body-of-water-under-a-starry-night-sky-3307218/"
           class="text-secondary underline-effect text-center mx-auto"
+          target="_blank"
           >Background by Tristan Pokornyi
         </a>
         <p class="flex justify-center text-center text-xs gap-8">
