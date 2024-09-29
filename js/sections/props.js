@@ -30,7 +30,7 @@ class Props extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <section id="props" class="min-h-svh py-8 flex flex-col gap-8">
+      <section id="props" class="h-full flex flex-col gap-8">
         <p class="text-8xl font-bold">Props</p>
         <p class="text-2xl">
           I like to recognize when I am not the original author of an idea, for
