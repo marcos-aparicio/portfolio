@@ -8,7 +8,7 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <aside
-        class="sticky z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary"
+        class="sticky z-50 flex h-full flex-col justify-between bg-base p-2 shadow-2xl shadow-primary opacity-85"
         style="position: sticky; top: 0"
       >
         <!--extremely important empty div-->
