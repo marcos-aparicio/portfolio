@@ -9,7 +9,7 @@ class Projects extends HTMLElement {
     this.innerHTML = `
       <section id="projects" class="flex flex-col min-h-svh py-8 gap-16">
       <div class="sticky top-0 z-10   bg-[url('https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg')] opacity-100 border-0">
-        <p class="text-6xl landscape-mobile:text-4xl landscape-mobile:p-2 xl:text-8xl p-4 font-bold sticky bg-surface border-0 opacity-90">Projects</p>
+        <p class="text-6xl landscape-mobile:text-4xl landscape-mobile:p-2 xl:text-8xl py-4 font-bold bg-surface border-0 opacity-90">Projects</p>
       </div>
         <div
           x-data="{ projects: [] }"
