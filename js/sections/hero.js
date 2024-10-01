@@ -70,12 +70,12 @@ class Hero extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       ${styles}
-      <section id="first" class="min-h-svh flex flex-col landscape:flex-row portrait:justify-start portrait:mt-32 items-center gap-8 sm:gap-16 lg:gap-0 landscape:max-[900px]:-mt-4">
+      <section id="first" class="min-h-svh flex flex-col landscape:flex-row portrait:justify-start portrait:mt-32 items-center gap-8 sm:gap-16 lg:gap-0 landscape-mobile:-mt-4">
         <div class="flex flex-col items-start" id="left-part">
           <svg
             width="159.60255mm"
             height="191.71155mm"
-            class="mx-auto mb-24 xl:mb-32 sm:block hidden landscape:max-[900px]:hidden landscape:lg:block sm:h-40 xl:h-48 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
+            class="mx-auto mb-24 xl:mb-32 landscape-mobile:hidden sm:block hidden  sm:h-40 xl:h-48 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
             style="border-radius: 2.5rem"
             viewBox="0 0 159.60255 191.71155"
             version="1.1"
@@ -205,8 +205,8 @@ class Hero extends HTMLElement {
           </div>
         </div>
         <div id="right-part" class="flex flex-col justify-center gap-6 sm:gap-8 lg:gap-32">
-          <h2 class="landscape:max-[900px]:text-2xl text-4xl sm:text-6xl text-center landscape:text-left xl:text-8xl font-bold">Hello Internet! 👋</h2>
-          <p class="landscape:max-[900px]:text-md landscape:max-[900px]:leading-6 text-lg sm:text-xl xl:text-2xl font-light ">
+          <h2 class="landscape-mobile:text-2xl text-4xl sm:text-6xl text-center landscape:text-left xl:text-8xl font-bold">Hello Internet! 👋</h2>
+          <p class="landscape-mobile:text-md landscape-mobile:leading-6 text-lg sm:text-xl xl:text-2xl font-light ">
             I am a programmer based on Hamilton Ontario, I like everything Linux
             related, know some stuff about website development and really keen on
             everything computer science related! Always looking for something else to
