@@ -30,14 +30,14 @@ class Props extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <section id="props" class="h-full flex flex-col gap-8 landscape-mobile:gap-4">
+      <section id="props" class="flex flex-col gap-8 h-full landscape-mobile:gap-4">
         <p
-          class="text-6xl landscape-mobile:text-4xl xl:text-8xl font-bold text-center"
+          class="text-6xl font-bold text-center xl:text-8xl landscape-mobile:text-4xl"
         >
           Props
         </p>
         <p
-          class="text-center text-lg md:text-2xl xl:text-3xl landscape-mobile:text-md landscape-mobile:leading-6"
+          class="text-lg text-center md:text-2xl xl:text-3xl landscape-mobile:text-md landscape-mobile:leading-6"
         >
           I like to recognize when I am not the original author of an idea, for this
           website I <strong>definitely</strong> used some code from other people or
@@ -71,7 +71,7 @@ class Props extends HTMLElement {
                     },
                   ]
               }"
-          class="text-secondary flex gap-2 sm:gap-8 flex-col list-decimal list-inside landscape-mobile:flex-row landscape-mobile:text-sm landscape-mobile:flex-wrap landscape-mobile:gap-y-1"
+          class="flex flex-col gap-2 list-decimal list-inside sm:gap-8 text-secondary landscape-mobile:flex-row landscape-mobile:text-sm landscape-mobile:flex-wrap landscape-mobile:gap-y-1"
         >
           <template x-for="prop in props">
             <li>

@@ -11,9 +11,9 @@ class Work extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <section id="work" class="h-svh py-8 flex flex-col overflow-hidden">
+    <section id="work" class="flex overflow-hidden flex-col py-8 h-svh">
       <div class="sticky md:static top-0 z-10   bg-[url('https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg')] opacity-100 border-0">
-        <p class="text-6xl landscape-mobile:text-4xl landscape-mobile:p-2 xl:text-8xl py-4 font-bold bg-surface border-0 opacity-90">Work</p>
+        <p class="py-4 text-6xl font-bold border-0 opacity-90 xl:text-8xl landscape-mobile:text-4xl landscape-mobile:p-2 bg-surface">Work</p>
       </div>
       <p class="px-4 text-lg xl:text-xl">
         While some of my work remains confidential, I’ve had the opportunity to work
@@ -25,15 +25,15 @@ class Work extends HTMLElement {
         platforms like <strong>Github</strong>. Below are some of the projects I’m
         able to share, where I applied and expanded my skill set:
       </p>
-      <div x-data="workProjectsData" class="relative px-4 py-12 sm:px-6 lg:px-8 flex-1">
+      <div x-data="workProjectsData" class="relative flex-1 py-12 px-4 sm:px-6 lg:px-8">
         <!-- Project Carousel Navigation -->
         <button
           @click="prevProject"
-          class="absolute top-1/2 left-5 rounded-full bg-base p-2 text-secondary shadow-md transition-all hover:bg-primary hover:shadow-lg z-10"
+          class="absolute left-5 top-1/2 z-10 p-2 rounded-full shadow-md transition-all hover:shadow-lg bg-base text-secondary hover:bg-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            class="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -50,14 +50,14 @@ class Work extends HTMLElement {
 
         <!-- Bubbles -->
         <div
-          class="flex space-x-2 mt-auto mb-2 absolute left-1/2 -translate-x-1/2 bottom-5 z-20"
+          class="flex absolute bottom-5 left-1/2 z-20 mt-auto mb-2 space-x-2 -translate-x-1/2"
           role="group"
         >
           <template x-for="(project, index) in projects" :key="index">
             <div
               :class="{'bg-primary': currentProject === index, 'bg-secondary': currentProject !== index}"
               @click="()=>goToProject(index)"
-              class="h-3 w-3 cursor-pointer rounded-full transition-all duration-300 hover:scale-125 hover:bg-primary"
+              class="w-3 h-3 rounded-full transition-all duration-300 cursor-pointer hover:scale-125 hover:bg-primary"
               :style="currentProject === index ? 'transform: scale(1.25);' : ''"
             ></div>
           </template>
@@ -65,11 +65,11 @@ class Work extends HTMLElement {
 
         <button
           @click="nextProject"
-          class="absolute right-5 top-1/2 rounded-full bg-base p-2 text-secondary shadow-md transition-all hover:bg-primary hover:shadow-lg z-10"
+          class="absolute right-5 top-1/2 z-10 p-2 rounded-full shadow-md transition-all hover:shadow-lg bg-base text-secondary hover:bg-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            class="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -93,7 +93,7 @@ class Work extends HTMLElement {
               x-cloak
               x-transition:enter.duration.500ms
               x-transition:leave.duration.0ms
-              class="rounded-lg bg-base shadow-lg shadow-primary"
+              class="rounded-lg shadow-lg bg-base shadow-primary"
             >
               <div class="p-6">
                 <h2
@@ -105,7 +105,7 @@ class Work extends HTMLElement {
               <div class="p-6">
                 <div class="flex flex-col gap-8 lg:flex-row">
                   <div class="flex-grow space-y-6 lg:w-2/3">
-                    <div class="rounded-lg bg-surface p-4">
+                    <div class="p-4 rounded-lg bg-surface">
                       <h3 class="mb-2 text-xl font-semibold">Tech Stack</h3>
                       <p class="text-lg" x-text="project.stack"></p>
                     </div>
@@ -120,7 +120,7 @@ class Work extends HTMLElement {
                       <h3 class="mb-2 text-xl font-semibold">
                         Technical Highlights
                       </h3>
-                      <ul class="list-inside list-disc space-y-2">
+                      <ul class="space-y-2 list-disc list-inside">
                         <template x-for="detail in project.details" :key="detail">
                           <li class="text-md" x-text="detail"></li>
                         </template>
@@ -128,12 +128,12 @@ class Work extends HTMLElement {
                     </div>
                   </div>
                   <div
-                    class="hidden aspect-video rounded-lg bg-gray-200 shadow-inner landscape:block lg:w-1/3"
+                    class="hidden bg-gray-200 rounded-lg shadow-inner lg:w-1/3 aspect-video landscape:block"
                   >
                     <div
-                      class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary"
+                      class="flex justify-center items-center w-full h-full bg-gradient-to-br from-primary"
                     >
-                      <p class="text-center font-semibold text-white">
+                      <p class="font-semibold text-center text-white">
                         Project Video Placeholder
                       </p>
                     </div>

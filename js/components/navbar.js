@@ -8,18 +8,18 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <aside
-        class="sticky z-50 flex lg:justify-stretch flex-row lg:flex-col w-full lg:w-fit lg:h-svh bg-base p-2 shadow-2xl shadow-primary lg:opacity-85 flex-wrap lg:flex-nowrap"
+        class="flex sticky z-50 flex-row flex-wrap p-2 w-full shadow-2xl lg:flex-col lg:flex-nowrap bg-base shadow-primary lg:justify-stretch lg:w-fit lg:h-svh lg:opacity-85"
         style="position: sticky; top: 0"
       >
         <ul
-          class="flex lg:h-full items-center justify-center lg:flex-col gap-4 px-4 md:px-8 text-lg font-bold text-secondary flex-1 lg:flex-none"
+          class="flex flex-1 gap-4 justify-center items-center px-4 text-lg font-bold md:px-8 lg:flex-col lg:flex-none lg:h-full text-secondary"
         >
           <li class="flex-1 lg:flex-none">
             <a href="#first" class="underline-effect">
               <svg
                 width="159.60255mm"
                 height="191.71155mm"
-                class="mx-auto h-12 md:h-16 w-fit rounded object-contain p-2"
+                class="object-contain p-2 mx-auto h-12 rounded md:h-16 w-fit"
                 viewBox="0 0 159.60255 191.71155"
                 version="1.1"
                 id="svg1"
@@ -94,14 +94,14 @@ class Navbar extends HTMLElement {
           </li>
 
           <input type="checkbox" class="hidden peer" id="menu-btn" />
-          <label for="menu-btn" class="cursor-pointer hidden peer-checked:flex">
+          <label for="menu-btn" class="hidden cursor-pointer peer-checked:flex">
             <i class="fa-solid fa-x"></i>
           </label>
-          <label for="menu-btn" class="cursor-pointer peer-checked:hidden lg:hidden">
+          <label for="menu-btn" class="cursor-pointer lg:hidden peer-checked:hidden">
             <i class="fa-solid fa-bars" for="menu-btn"></i>
           </label>
           <ul
-            class="peer-checked:flex hidden absolute left-0 lg:static lg:flex flex-col gap-4 order-last lg:order-none bg-base w-svw lg:w-fit z-10 p-4 lg:p-0 top-16"
+            class="hidden absolute left-0 top-16 z-10 flex-col order-last gap-4 p-4 lg:flex lg:static lg:order-none lg:p-0 peer-checked:flex bg-base w-svw lg:w-fit"
           >
             <li class="underline-effect">
               <a href="#projects">Projects</a>
@@ -117,7 +117,7 @@ class Navbar extends HTMLElement {
             </li>
           </ul>
           <div
-            class="flex items-center justify-around lg:absolute lg:bottom-2"
+            class="flex justify-around items-center lg:absolute lg:bottom-2"
             x-data="{
                     selectedTheme: localStorage.getItem('theme') ?? 'theme-light'
                     }"

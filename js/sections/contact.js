@@ -32,24 +32,24 @@ class Contact extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-  <section id="contact" class="min-h-svh flex flex-col gap-8 py-8">
+  <section id="contact" class="flex flex-col gap-8 py-8 min-h-svh">
     <p
-      class="text-6xl landscape-mobile:text-4xl xl:text-8xl text-center font-bold"
+      class="text-6xl font-bold text-center xl:text-8xl landscape-mobile:text-4xl"
     >
       Contact
     </p>
-    <p class="text-center text-xl md:text-2xl xl:text-3xl">
+    <p class="text-xl text-center md:text-2xl xl:text-3xl">
       Greetings, suggestions or anything you want. Let's get to work 🧑‍💻
     </p>
 
     <div
-      class="mx-auto flex w-full xl:w-fit flex-col justify-center gap-8 landscape-mobile:flex-row flex-wrap landscape-mobile:gap-2"
+      class="flex flex-col flex-wrap gap-8 justify-center mx-auto w-full landscape-mobile:flex-row landscape-mobile:gap-2 xl:w-fit"
       x-data="socialMediaLinks"
     >
       <template x-for="(link,i) in socialMediaLinks" :key="i">
         <a
           :href="link.url"
-          class="underline-effect flex items-center justify-between w-full gap-2 md:gap-8 xl:gap-16 text-xl md:text-3xl p-1 md:px-8 hover:text-primary rounded-xl landscape-mobile:gap-2 landscape-mobile:w-fit landscape-mobile:text-lg"
+          class="flex gap-2 justify-between items-center p-1 w-full text-xl rounded-xl md:gap-8 md:px-8 md:text-3xl xl:gap-16 underline-effect landscape-mobile:gap-2 landscape-mobile:w-fit landscape-mobile:text-lg hover:text-primary"
           target="_blank"
         >
           <span
