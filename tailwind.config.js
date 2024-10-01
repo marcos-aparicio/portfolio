@@ -12,6 +12,11 @@ module.exports = {
       fontSize: {
         md: "1rem",
       },
+      screens: {
+        "landscape-mobile": {
+          raw: "only screen and ((orientation: landscape) and (max-width: 900px))",
+        },
+      },
     },
   },
   plugins: [],
