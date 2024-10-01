@@ -11,9 +11,11 @@ class Work extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <section id="work" class="h-svh py-8 flex flex-col">
-      <h2 class="mb-8 text-8xl font-bold">Work</h2>
-      <p class="px-4 text-xl">
+    <section id="work" class="h-svh py-8 flex flex-col overflow-hidden">
+      <div class="sticky md:static top-0 z-10   bg-[url('https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg')] opacity-100 border-0">
+        <p class="text-6xl landscape-mobile:text-4xl landscape-mobile:p-2 xl:text-8xl py-4 font-bold bg-surface border-0 opacity-90">Work</p>
+      </div>
+      <p class="px-4 text-lg xl:text-xl">
         While some of my work remains confidential, I’ve had the opportunity to work
         extensively with <strong>React</strong> in front-end development and gain
         exposure to backend systems using <strong>Django</strong>. However, my
@@ -23,7 +25,7 @@ class Work extends HTMLElement {
         platforms like <strong>Github</strong>. Below are some of the projects I’m
         able to share, where I applied and expanded my skill set:
       </p>
-      <div x-data="workProjectsData" class="relative px-4 py-12 sm:px-6 lg:px-8 flex-1 overflow-hidden">
+      <div x-data="workProjectsData" class="relative px-4 py-12 sm:px-6 lg:px-8 flex-1">
         <!-- Project Carousel Navigation -->
         <button
           @click="prevProject"
@@ -91,7 +93,7 @@ class Work extends HTMLElement {
               x-cloak
               x-transition:enter.duration.500ms
               x-transition:leave.duration.0ms
-              class="overflow-hidden rounded-lg bg-base shadow-lg shadow-primary"
+              class="rounded-lg bg-base shadow-lg shadow-primary"
             >
               <div class="p-6">
                 <h2
@@ -126,7 +128,7 @@ class Work extends HTMLElement {
                     </div>
                   </div>
                   <div
-                    class="hidden aspect-video overflow-hidden rounded-lg bg-gray-200 shadow-inner md:block lg:w-1/3"
+                    class="hidden aspect-video rounded-lg bg-gray-200 shadow-inner landscape:block lg:w-1/3"
                   >
                     <div
                       class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary"
