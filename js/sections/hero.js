@@ -2,7 +2,21 @@ const COMPONENT_NAME = "hero-section";
 const styles = `
     <style>
         :root {
-          --distance: 20vw;
+          --distance: 25vw;
+          --primaryTextSize: 5.5vw;
+          --secondaryTextSize: 3.5vw;
+        }
+        @media (max-width: 1024px) and (orientation: portrait) {
+          :root {
+            --distance: 55vw;
+          --primaryTextSize: 6.5vw;
+          --secondaryTextSize: 4.5vw;
+          }
+        }
+        @media (max-width: 1024px) and (orientation: landscape) {
+          :root {
+            --distance: 20vw;
+          }
         }
 
         .line {
@@ -36,14 +50,14 @@ const styles = `
       .spanFast {
         display: inline-block;
         font-family: "Montserrat", sans-serif;
-        font-size: 5.5vw;
+        font-size: var(--primaryTextSize);
         font-weight: 900;
         text-transform: uppercase;
         line-height: 0.8;
         transition: ease-out 0.6s;
       }
       .job span {
-        font-size: 3.5vw !important;
+        font-size: var(--secondaryTextSize) !important;
       }
       </style>
 `;
@@ -56,12 +70,12 @@ class Hero extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       ${styles}
-      <section id="first" class="min-h-svh flex items-center">
+      <section id="first" class="min-h-svh flex flex-col landscape:flex-row portrait:justify-start portrait:mt-32 items-center gap-8 sm:gap-16 lg:gap-0 landscape:max-[900px]:-mt-4">
         <div class="flex flex-col items-start" id="left-part">
           <svg
             width="159.60255mm"
             height="191.71155mm"
-            class="mx-auto mb-32 h-48 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
+            class="mx-auto mb-24 xl:mb-32 sm:block hidden landscape:max-[900px]:hidden landscape:lg:block sm:h-40 xl:h-48 w-fit rounded bg-primary object-contain p-8 text-surface text-white"
             style="border-radius: 2.5rem"
             viewBox="0 0 159.60255 191.71155"
             version="1.1"
@@ -190,9 +204,9 @@ class Hero extends HTMLElement {
             </div>
           </div>
         </div>
-        <div id="right-part" class="flex flex-col justify-center gap-32">
-          <h2 class="text-6xl xl:text-8xl font-bold">Hello Internet! 👋</h2>
-          <p class="text-xl xl:text-2xl font-light">
+        <div id="right-part" class="flex flex-col justify-center gap-6 sm:gap-8 lg:gap-32">
+          <h2 class="landscape:max-[900px]:text-2xl text-4xl sm:text-6xl text-center landscape:text-left xl:text-8xl font-bold">Hello Internet! 👋</h2>
+          <p class="landscape:max-[900px]:text-md landscape:max-[900px]:leading-6 text-lg sm:text-xl xl:text-2xl font-light ">
             I am a programmer based on Hamilton Ontario, I like everything Linux
             related, know some stuff about website development and really keen on
             everything computer science related! Always looking for something else to

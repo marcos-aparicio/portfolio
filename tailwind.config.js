@@ -9,6 +9,9 @@ module.exports = {
         surface: "var(--surface)",
         base: "var(--base)",
       },
+      fontSize: {
+        md: "1rem",
+      },
     },
   },
   plugins: [],
