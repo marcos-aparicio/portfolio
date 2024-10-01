@@ -30,9 +30,9 @@ class Props extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <section id="props" class="h-full flex flex-col gap-8">
-        <p class="text-8xl font-bold">Props</p>
-        <p class="text-2xl">
+      <section id="props" class="h-full flex flex-col gap-8 landscape-mobile:gap-4">
+        <p class="text-6xl landscape-mobile:text-4xl xl:text-8xl font-bold text-center">Props</p>
+        <p class="text-center text-lg md:text-2xl xl:text-3xl landscape-mobile:text-md landscape-mobile:leading-6">
           I like to recognize when I am not the original author of an idea, for
           this website I <strong>definitely</strong> used some code from other
           people or was inspired by their code. I don't think they'll ever see this but I want to acknowledge them.
@@ -64,7 +64,7 @@ class Props extends HTMLElement {
               },
             ]
         }"
-          class="text-secondary flex gap-8 flex-col list-decimal list-inside"
+          class="text-secondary flex gap-2 sm:gap-8 flex-col list-decimal list-inside landscape-mobile:flex-row landscape-mobile:text-sm landscape-mobile:flex-wrap landscape-mobile:gap-y-1"
         >
         <template x-for="prop in props">
           <li>
