@@ -7,11 +7,13 @@ class Projects extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <section id="projects" class="flex flex-col min-h-svh xl:h-svh py-8 gap-16">
-        <p class="text-8xl font-bold">Projects</p>
+      <section id="projects" class="flex flex-col min-h-svh py-8 gap-16">
+      <div class="sticky top-0 z-10   bg-[url('https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg')] opacity-100">
+        <p class="text-6xl xl:text-8xl p-4 font-bold sticky bg-surface opacity-90">Projects</p>
+      </div>
         <div
           x-data="{ projects: [] }"
-          class="flex flex-col flex-wrap gap-4 overflow-y-hidden overflow-x-scroll"
+          class="flex flex-wrap gap-4"
           x-init="
                   async () => {
                     const fetchProjects = async () => {
@@ -19,7 +21,7 @@ class Projects extends HTMLElement {
                         'https://api.github.com/users/marcos-aparicio/repos',
                       );
                       const data = await request.json();
-                      return data
+                      const output = data
                         .filter((p) => p.fork === false)
                         .map((p) => ({
                           name: p.name,
@@ -28,6 +30,11 @@ class Projects extends HTMLElement {
                           html_url: p.html_url,
                           homepage: p.homepage,
                         }));
+                      let postOutput = []
+                      for (let i = 0; i < output.length*2; i++) {
+                        postOutput.push(output[i % output.length]);
+                      }
+                      return postOutput;
                     };
                     projects = await fetchProjects();
                   };
@@ -35,7 +42,7 @@ class Projects extends HTMLElement {
         >
           <template x-for="(project,i) in projects" :key="i">
             <div
-              class="flex flex-col bg-base py-4 px-6 max-w-xl rounded-xl justify-between gap-4 shadow-lg"
+              class="flex flex-col bg-base py-4 px-6 xl:max-w-lg rounded-xl justify-between gap-4 shadow-lg"
             >
               <div class="pointer-events-none">
                 <h2
