@@ -15,7 +15,7 @@ class Work extends HTMLElement {
       <div class="sticky md:static top-0 z-20   bg-[url('https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg')] opacity-100 border-0">
         <p class="py-4 text-6xl font-bold border-0 opacity-90 xl:text-8xl landscape-mobile:text-4xl landscape-mobile:p-2 bg-surface">Work</p>
       </div>
-      <p class="px-4 portrait:text-md landscape:text-lg xl:text-xl">
+      <p class="px-4 xl:text-xl portrait:text-md landscape:text-lg">
         While some of my work remains confidential, I’ve had the opportunity to work
         extensively with <strong>React</strong> in front-end development and gain
         exposure to backend systems using <strong>Django</strong>. However, my
@@ -25,15 +25,15 @@ class Work extends HTMLElement {
         platforms like <strong>Github</strong>. Below are some of the projects I’m
         able to share, where I applied and expanded my skill set:
       </p>
-      <div x-data="workProjectsData" class="relative my-12 mx-4 sm:mx-6 lg:mx-8 h-2/3">
+      <div x-data="workProjectsData" class="relative my-12 mx-4 h-2/3 sm:mx-6 lg:mx-8">
         <!-- Project Carousel Navigation -->
         <button
           @click="prevProject"
-          class="absolute -left-5 xl:-left-10 top-1/2 z-10 p-2 rounded-full shadow-md transition-all hover:shadow-lg bg-base text-secondary hover:bg-primary"
+          class="absolute -left-5 top-1/2 z-10 p-2 rounded-full shadow-md transition-all xl:-left-10 hover:shadow-lg bg-base text-secondary hover:bg-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="xl:w-6 xl:h-6 w-4 h-4"
+            class="w-4 h-4 xl:w-6 xl:h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -50,7 +50,7 @@ class Work extends HTMLElement {
 
         <!-- Bubbles -->
         <div
-          class="hidden landscape-mobile:hidden md:flex absolute -bottom-10 left-1/2 z-20 mt-auto mb-2 space-x-2 -translate-x-1/2"
+          class="hidden absolute -bottom-10 left-1/2 z-20 mt-auto mb-2 space-x-2 -translate-x-1/2 md:flex landscape-mobile:hidden"
           role="group"
         >
           <template x-for="(project, index) in projects" :key="index">
@@ -65,11 +65,11 @@ class Work extends HTMLElement {
 
         <button
           @click="nextProject"
-          class="absolute -right-5 xl:-right-10 top-1/2 z-10 p-2 rounded-full shadow-md transition-all hover:shadow-lg bg-base text-secondary hover:bg-primary"
+          class="absolute -right-5 top-1/2 z-10 p-2 rounded-full shadow-md transition-all xl:-right-10 hover:shadow-lg bg-base text-secondary hover:bg-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="xl:w-6 xl:h-6 w-4 h-4"
+            class="w-4 h-4 xl:w-6 xl:h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -93,22 +93,22 @@ class Work extends HTMLElement {
               x-transition:leave.duration.0ms
               class="rounded-lg shadow-lg bg-base shadow-primary h-fit"
             >
-              <div class="landscape-mobile:p-2 p-4">
+              <div class="p-4 landscape-mobile:p-2">
                 <h2
                   class="text-2xl font-bold xl:text-3xl landscape-mobile:text-md"
                   x-text="project.title"
                 ></h2>
               </div>
               <hr class="h-0.5 border-t-0 bg-primary/30" />
-              <div class="landscape-mobile:p-2 p-4">
+              <div class="p-4 landscape-mobile:p-2">
                 <div class="flex flex-col gap-6 lg:flex-row">
                   <div class="flex-grow space-y-6 lg:w-2/3">
-                    <div class="p-2 xl:p-4 rounded-lg bg-surface">
-                      <h3 class="mb-2 text-lg xl:text-xl font-semibold">Tech Stack</h3>
+                    <div class="p-2 rounded-lg xl:p-4 bg-surface">
+                      <h3 class="mb-2 text-lg font-semibold xl:text-xl">Tech Stack</h3>
                       <p class="text-md" x-text="project.stack"></p>
                     </div>
                     <div>
-                      <h3 class="mb-2 text-lg xl:text-xl font-semibold">Project Overview</h3>
+                      <h3 class="mb-2 text-lg font-semibold xl:text-xl">Project Overview</h3>
                       <p
                         class="text-sm leading-relaxed"
                         x-text="project.description"

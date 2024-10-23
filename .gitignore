@@ -1,5 +1,7 @@
 node_modules/
 dist/
 justfile
+.secrets
 text/
 .prettierrc
+out/

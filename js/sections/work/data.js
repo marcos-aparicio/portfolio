@@ -23,7 +23,7 @@ export default () => ({
         "Utilized a library for image optimization.",
         "Leveraged Livewire within the Laravel ecosystem.",
       ],
-      video: "https://www.youtube.com/embed/MxwwE_ReGu0?si=IePH7R8NwbvJmW3V",
+      video: "https://www.youtube.com/embed/JE40Vq7J8ZI?si=oq-hku79MixFQwX-",
     },
     {
       title: "RCNA.ca",

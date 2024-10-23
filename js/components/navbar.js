@@ -167,18 +167,24 @@ const navItems = document.querySelectorAll("nav-bar ul li");
 const main = document.querySelector("main");
 function sectionWatcher(section, index, sections) {
   // padding to consider for the section to be considered active(since there could be a dead space between sections)
-  const padding = 150;
-  if (
-    (main.scrollTop <= section.offsetTop + section.offsetHeight &&
-      main.scrollTop >= section.offsetTop) ||
-    (main.scrollTop + padding <= section.offsetTop + section.offsetHeight &&
-      main.scrollTop + padding >= section.offsetTop)
-  ) {
+  let padding = 150;
+  let condition =
+    main.scrollTop <= section.offsetTop + section.offsetHeight &&
+    main.scrollTop >= section.offsetTop;
+  condition =
+    section.index === "contact"
+      ? condition
+      : condition ||
+        (main.scrollTop + padding <= section.offsetTop + section.offsetHeight &&
+          main.scrollTop + padding >= section.offsetTop);
+
+  if (condition) {
     navItems[index].classList.add("text-primary");
   } else {
     navItems[index].classList.remove("text-primary");
   }
 }
+sections.forEach(sectionWatcher);
 window.onload = () => {
   sections.forEach(sectionWatcher);
 };

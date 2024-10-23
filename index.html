@@ -19,10 +19,10 @@
     ></script>
   </head>
   <body
-    class="flex overflow-hidden relative flex-col justify-around h-screen lg:flex-row"
+    class="relative flex h-screen flex-col justify-around overflow-hidden lg:flex-row"
   >
     <div
-      class="absolute inset-0 top-0 left-0 bg-no-repeat bg-cover opacity-10"
+      class="absolute inset-0 left-0 top-0 bg-cover bg-no-repeat opacity-10"
       id="parallax"
       style="
         background-image: url(&quot;https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg&quot;);
@@ -30,32 +30,13 @@
     ></div>
     <nav-bar></nav-bar>
     <main
-      class="flex overflow-scroll overflow-x-hidden relative flex-col gap-16 px-4 md:px-8 z-5 w-svw scroll-smooth xl:landscape:gap-32"
+      class="z-5 relative flex w-svw flex-col gap-16 overflow-scroll overflow-x-hidden scroll-smooth px-4 md:px-8 xl:landscape:gap-32"
     >
       <hero-section></hero-section>
       <projects-section></projects-section>
       <work-section></work-section>
       <contact-section></contact-section>
       <props-section></props-section>
-      <footer
-        class="flex flex-col gap-4 justify-center pb-4 mx-auto opacity-60 landscape-mobile:gap-1 landscape-mobile:pb-1"
-      >
-        <a
-          href="https://www.pexels.com/photo/landscape-photography-of-tree-s-reflection-on-body-of-water-under-a-starry-night-sky-3307218/"
-          class="mx-auto text-center underline-effect text-secondary"
-          target="_blank"
-          >Background by Tristan Pokornyi
-        </a>
-        <p class="flex gap-8 justify-center text-xs text-center">
-          <span
-            >Marcos Aparicio
-            <script type="text/javascript">
-              document.write(new Date().getFullYear());
-            </script></span
-          >
-          <span>Built with 🧡 using AlpineJS, Tailwind and Vite</span>
-        </p>
-      </footer>
     </main>
 
     <!-- Scripts -->
