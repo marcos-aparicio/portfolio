@@ -31,7 +31,7 @@ class Props extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section id="props" class="flex flex-col justify-between py-2 landscape-mobile:h-fit h-[95svh] portrait:h-[85vh]">
-        <div class="flex flex-col gap-8 landscape-mobile:gap-4 ">
+        <div class="flex flex-col gap-8 landscape-mobile:gap-4">
           <p
             class="text-6xl font-bold text-center xl:text-8xl landscape-mobile:text-4xl"
           >
@@ -79,7 +79,7 @@ class Props extends HTMLElement {
                 <a
                   :href="prop.source"
                   x-text="prop.idea"
-                  class="underline-effect"
+                  class="text-sm underline-effect md:text-md"
                   target="_blank"
                 ></a>
               </li>
@@ -87,15 +87,15 @@ class Props extends HTMLElement {
           </ol>
         </div>
         <footer
-          class="mx-auto flex w-full flex-col justify-center gap-4 pb-4 opacity-60 landscape-mobile:gap-1 landscape-mobile:pb-1"
+          class="flex flex-col gap-4 justify-center pb-4 mx-auto w-full opacity-60 landscape-mobile:gap-1 landscape-mobile:pb-1"
             >
               <a
                 href="https://www.pexels.com/photo/landscape-photography-of-tree-s-reflection-on-body-of-water-under-a-starry-night-sky-3307218/"
-                class="underline-effect mx-auto text-center text-secondary"
+                class="mx-auto text-center underline-effect text-secondary"
                 target="_blank"
                 >Background by Tristan Pokornyi
               </a>
-              <p class="flex justify-center gap-8 text-center text-xs">
+              <p class="flex gap-8 justify-center text-xs text-center">
                 <span
                   >Marcos Aparicio
                   <script type="text/javascript">
