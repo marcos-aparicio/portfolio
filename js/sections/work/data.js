@@ -11,6 +11,7 @@ export default () => ({
         "Created a custom database schema and REST API endpoints.",
         "Implemented a responsive frontend using SASS.",
       ],
+      video: "https://www.youtube.com/embed/MxwwE_ReGu0?si=IePH7R8NwbvJmW3V",
     },
     {
       title: "Remembering Their Faces",
@@ -22,6 +23,7 @@ export default () => ({
         "Utilized a library for image optimization.",
         "Leveraged Livewire within the Laravel ecosystem.",
       ],
+      video: "https://www.youtube.com/embed/MxwwE_ReGu0?si=IePH7R8NwbvJmW3V",
     },
     {
       title: "RCNA.ca",
@@ -34,17 +36,34 @@ export default () => ({
         "Integrated Laravel Cashier and Stripe for payment processing.",
         "Simplified membership registration using FilamentPHP.",
       ],
+      video: "https://www.youtube.com/embed/AXH5X7H2LE0?si=QrcMMrIpdOaSANDF",
     },
   ],
   nextProject() {
+    //pauses current video if playing
+    this.pauseCurrentProjectVideo();
     this.currentProject = (this.currentProject + 1) % this.projects.length;
   },
   prevProject() {
+    //pauses current video if playing
+    this.pauseCurrentProjectVideo();
     this.currentProject =
       (this.currentProject - 1 + this.projects.length) % this.projects.length;
   },
   goToProject(index) {
     if (index < 0 || index >= this.projects.length) return;
+
+    //pauses current video if playing
+    this.pauseCurrentProjectVideo();
     this.currentProject = index;
+  },
+  pauseCurrentProjectVideo() {
+    const currentIFrame = document.querySelector(
+      `iframe[src="${this.projects[this.currentProject].video}&enablejsapi=1"]`,
+    ).contentWindow;
+    currentIFrame.postMessage(
+      JSON.stringify({ event: "command", func: "pauseVideo", args: "" }),
+      "*",
+    );
   },
 });
