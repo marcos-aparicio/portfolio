@@ -11,7 +11,7 @@ export default () => ({
         "Created a custom database schema and REST API endpoints.",
         "Implemented a responsive frontend using SASS.",
       ],
-      video: "https://www.youtube.com/embed/MxwwE_ReGu0?si=IePH7R8NwbvJmW3V",
+      video: "https://www.youtube.com/embed/QVvyTUMf4VA?si=AkWjDTNLsaoBJHKN",
     },
     {
       title: "Remembering Their Faces",

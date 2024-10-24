@@ -19,10 +19,10 @@
     ></script>
   </head>
   <body
-    class="relative flex h-screen flex-col justify-around overflow-hidden lg:flex-row"
+    class="flex overflow-hidden relative flex-col justify-around h-screen lg:flex-row"
   >
     <div
-      class="absolute inset-0 left-0 top-0 bg-cover bg-no-repeat opacity-10"
+      class="absolute inset-0 top-0 left-0 bg-no-repeat bg-cover opacity-10"
       id="parallax"
       style="
         background-image: url(&quot;https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg&quot;);
@@ -30,7 +30,7 @@
     ></div>
     <nav-bar></nav-bar>
     <main
-      class="z-5 relative flex w-svw flex-col gap-16 overflow-scroll overflow-x-hidden scroll-smooth px-4 md:px-8 xl:landscape:gap-32"
+      class="flex overflow-scroll overflow-x-hidden relative flex-col gap-16 px-4 md:px-8 z-5 w-svw scroll-smooth xl:landscape:gap-32"
     >
       <hero-section></hero-section>
       <projects-section></projects-section>
