@@ -15,7 +15,7 @@ class Work extends HTMLElement {
       <div class="sticky md:static top-0 z-20   bg-[url('https://images.pexels.com/photos/3307218/pexels-photo-3307218.jpeg')] opacity-100 border-0">
         <p class="py-4 text-6xl font-bold border-0 opacity-90 xl:text-8xl landscape-mobile:text-4xl landscape-mobile:p-2 bg-surface">Work</p>
       </div>
-      <p class="px-4 xl:text-xl portrait:text-md landscape:text-lg">
+      <p class="px-4 xl:text-xl portrait:text-md landscape:text-lg landscape-mobile:!text-sm">
         While some of my work remains confidential, I’ve had the opportunity to work
         extensively with <strong>React</strong> in front-end development and gain
         exposure to backend systems using <strong>Django</strong>. However, my
@@ -102,25 +102,25 @@ class Work extends HTMLElement {
               <hr class="h-0.5 border-t-0 bg-primary/30" />
               <div class="p-4 landscape-mobile:p-2">
                 <div class="flex flex-col gap-6 lg:flex-row">
-                  <div class="flex-grow space-y-6 lg:w-2/3">
-                    <div class="p-2 rounded-lg xl:p-4 bg-surface">
-                      <h3 class="mb-2 text-lg font-semibold xl:text-xl">Tech Stack</h3>
-                      <p class="text-md" x-text="project.stack"></p>
+                  <div class="grid flex-grow grid-cols-1 space-y-6 lg:w-2/3 landscape-mobile:grid-cols-3 landscape-mobile:space-x-1 landscape-mobile:space-y-0">
+                    <div class="p-2 rounded-lg xl:p-4 landscape-mobile:bg-transparent landscape-mobile:p-0 bg-surface">
+                      <h3 class="mb-2 text-lg font-semibold xl:text-xl landscape-mobile:text-md">Tech Stack</h3>
+                      <p class="text-md landscape-mobile:text-xs" x-text="project.stack"></p>
                     </div>
                     <div>
-                      <h3 class="mb-2 text-lg font-semibold xl:text-xl">Project Overview</h3>
+                      <h3 class="mb-2 text-lg font-semibold xl:text-xl landscape-mobile:text-md landscape-mobile:mb-1">Project Overview</h3>
                       <p
-                        class="text-sm leading-relaxed"
+                        class="text-sm leading-relaxed landscape-mobile:text-xs"
                         x-text="project.description"
                       ></p>
                     </div>
                     <div>
-                      <h3 class="mb-2 text-xl font-semibold">
+                      <h3 class="mb-2 text-xl font-semibold landscape-mobile:text-md">
                         Technical Highlights
                       </h3>
-                      <ul class="space-y-2 list-disc list-inside">
+                      <ul class="space-y-2 list-disc list-inside landscape-mobile:list-none">
                         <template x-for="detail in project.details" :key="detail">
-                          <li class="text-sm" x-text="detail"></li>
+                          <li class="text-sm landscape-mobile:text-xs" x-text="detail"></li>
                         </template>
                       </ul>
                     </div>
