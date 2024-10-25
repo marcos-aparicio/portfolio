@@ -8,6 +8,7 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <aside
+        id="navbar"
         class="flex sticky top-0 z-50 flex-row flex-wrap p-2 w-full shadow-2xl lg:flex-col lg:flex-nowrap landscape-mobile:p-0.5 bg-base shadow-primary lg:justify-stretch lg:w-fit lg:h-svh lg:opacity-85"
       >
         <ul
@@ -18,7 +19,7 @@ class Navbar extends HTMLElement {
               <svg
                 width="159.60255mm"
                 height="191.71155mm"
-                class="object-contain p-2 mx-auto h-12 rounded md:h-16 landscape-mobile:h-10 w-fit"
+                class="object-contain p-2 mx-auto w-16 h-12 rounded md:h-16 landscape-mobile:h-10"
                 viewBox="0 0 159.60255 191.71155"
                 version="1.1"
                 id="svg1"
