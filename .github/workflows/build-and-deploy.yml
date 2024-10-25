@@ -60,7 +60,11 @@ jobs:
           ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Copy Build to Target Server
-        run: |
+      - run: |
+          apt-get update -y
+          apt-get install -y rsync
+        if: ${{ github.event.act }}
+      - run: |
           rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" "${{ github.workspace }}"/"${{ env.REMOTE_PROJECT_NAME }}"  "${{ secrets.SSH_USERNAME }}"@"${{ secrets.SSH_HOST }}":"${{ env.REMOTE_PROJECT_PATH }}" --delete
 
       - name: Creates Symbolic Link
