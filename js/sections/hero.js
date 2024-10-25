@@ -1,65 +1,81 @@
 const COMPONENT_NAME = "hero-section";
 const styles = `
     <style>
-        :root {
-          --distance: 25vw;
-          --primaryTextSize: 5.5vw;
-          --secondaryTextSize: 3.5vw;
-        }
-        @media (max-width: 1024px) and (orientation: portrait) {
-          :root {
-            --distance: 55vw;
-          --primaryTextSize: 6.5vw;
-          --secondaryTextSize: 4.5vw;
-          }
-        }
-        @media (max-width: 1024px) and (orientation: landscape) {
-          :root {
-            --distance: 20vw;
-          }
-        }
+    :root {
+      --distance: 25vw;
+      --primaryTextSize: 5.5vw;
+      --secondaryTextSize: 3.5vw;
+    }
+    @media (max-width: 1024px) and (orientation: portrait) {
+      :root {
+        --distance: 55vw;
+        --primaryTextSize: 6.5vw;
+        --secondaryTextSize: 4.5vw;
+      }
+    }
+    @media (max-width: 1024px) and (orientation: landscape) {
+      :root {
+        --distance: 20vw;
+      }
+    }
 
-        .line {
-          overflow: visible;
-          position: relative;
-          display: flex;
-        }
-        .left,
-        .right {
-          width: var(--distance);
-          overflow: hidden;
-          display: inline-block;
-        }
-        .left {
-          @apply text-primary;
-          transform: skew(0deg, -15deg);
-        }
-        .right {
-          transform: skew(0deg, 15deg);
-        }
-        .left .content {
-          width: calc(var(--distance) * 2);
-          text-align: center;
-        }
-        .right .content {
-          width: calc(var(--distance) * 2);
-          text-align: center;
-          transform: translateX(calc(var(--distance) * -1));
-        }
-      .spanSlow,
-      .spanFast {
-        display: inline-block;
-        font-family: "Montserrat", sans-serif;
-        font-size: var(--primaryTextSize);
-        font-weight: 900;
-        text-transform: uppercase;
-        line-height: 0.8;
-        transition: ease-out 0.6s;
-      }
-      .job span {
-        font-size: var(--secondaryTextSize) !important;
-      }
-      </style>
+    .line {
+      overflow: visible;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    .left,
+    .right {
+      width: var(--distance);
+      overflow: hidden;
+      display: inline-block;
+    }
+    .left {
+      clip-path: inset(0 0 0 -50%);
+      @apply text-primary;
+      -webkit-transform: skew(0deg, -15deg);
+      -ms-transform: skew(0deg, -15deg);
+      transform: skew(0deg, -15deg);
+    }
+    .right {
+      clip-path: inset(0 0 0 0%);
+      -webkit-transform: skew(0deg, 15deg);
+      -ms-transform: skew(0deg, 15deg);
+      transform: skew(0deg, 15deg);
+    }
+    .left .content {
+      width: calc(var(--distance) * 2);
+      text-align: center;
+    }
+    .right .content {
+      width: calc(var(--distance) * 2);
+      text-align: center;
+      -webkit-transform: translateX(calc(var(--distance) * -1));
+      -ms-transform: translateX(calc(var(--distance) * -1));
+      transform: translateX(calc(var(--distance) * -1));
+    }
+    .spanSlow,
+    .spanFast {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-user-select: none;
+      font-size: var(--primaryTextSize);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.8;
+      -webkit-transition: ease-out 0.6s;
+      -o-transition: ease-out 0.6s;
+      transition: ease-out 0.6s;
+    }
+    .job span {
+      font-size: var(--secondaryTextSize) !important;
+    }
+    </style>
 `;
 
 class Hero extends HTMLElement {
@@ -78,7 +94,7 @@ class Hero extends HTMLElement {
           <svg
             width="159.60255mm"
             height="191.71155mm"
-            class="hidden object-contain p-8 mx-auto mb-24 text-white rounded sm:block sm:h-40 xl:mb-32 xl:h-48 landscape-mobile:hidden w-fit bg-primary text-surface"
+            class="hidden object-contain p-8 mx-auto mb-24 text-white rounded sm:block sm:w-40 sm:h-40 xl:mb-32 xl:w-48 xl:h-48 landscape-mobile:hidden w-fit bg-primary text-surface aspect-square"
             style="border-radius: 2.5rem"
             viewBox="0 0 159.60255 191.71155"
             version="1.1"
