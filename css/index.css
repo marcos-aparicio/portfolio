@@ -40,7 +40,3 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
-#menu-btn-container #menu-btn:checked ~ #submenu {
-  display: none !important;
-}

@@ -49,7 +49,7 @@ class Projects extends HTMLElement {
             <div class="pointer-events-none">
               <h2
                 x-text="project.name"
-                class="text-xl font-bold md:text-3xl landscape-mobile:text-lg text-primary"
+                class="text-xl font-bold md:text-3xl landscape-mobile:text-md text-primary"
               ></h2>
               <hr class="my-2 h-0.5 border-t-0 bg-primary/30" />
               <p
@@ -62,14 +62,14 @@ class Projects extends HTMLElement {
                 <template x-for="topic in project.topics" :key="topic">
                   <span
                     x-text="topic"
-                    class="py-1 px-2 text-xs font-bold text-white rounded-lg bg-primary landscape-mobile:p-1"
+                    class="py-1 px-2 text-xs font-bold text-white rounded-lg bg-primary landscape-mobile:p-1 landscale-mobile:font-normal landscape-mobile:text-[0.6rem]"
                   ></span>
                 </template>
               </div>
               <div class="flex gap-4 items-center landscape-mobile:gap-2">
                 <a
                   :href="project.html_url"
-                  class="flex gap-2 justify-center items-center p-2 text-sm rounded-lg border border-r-2 hover:opacity-75 border-primary/90 landscape-mobile:p-1 text-primary underline-effect"
+                  class="flex gap-2 justify-center items-center p-2 text-sm rounded-lg border border-r-2 hover:opacity-75 border-primary/90 landscape-mobile:text-xs landscape-mobile:p-1 text-primary underline-effect"
                   target="_blank"
                 >
                   <i class="fa-brands fa-github-alt"></i>
@@ -77,7 +77,7 @@ class Projects extends HTMLElement {
                 </a>
                 <a
                   :href="project.homepage"
-                  class="flex gap-2 justify-center items-center p-2 text-sm rounded-lg border border-r-2 hover:opacity-75 border-primary/90 landscape-mobile:p-1 text-primary underline-effect"
+                  class="flex gap-2 justify-center items-center p-2 text-sm rounded-lg border border-r-2 hover:opacity-75 border-primary/90 landscape-mobile:p-1 text-primary underline-effect landscape-mobile:text-xs"
                   target="_blank"
                   x-show="project.homepage"
                 >
