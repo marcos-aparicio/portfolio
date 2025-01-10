@@ -60,11 +60,11 @@ jobs:
           ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Copy Build to Target Server
-      - run: |
-          apt-get update -y
-          apt-get install -y rsync
-        if: ${{ github.event.act }}
-      - run: |
+        run: |
+          if echo ${{  github.event.act  }} | grep -c "true"
+          then
+            apt-get update -y && apt-get install -y rsync
+          fi
           rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" "${{ github.workspace }}"/"${{ env.REMOTE_PROJECT_NAME }}"  "${{ secrets.SSH_USERNAME }}"@"${{ secrets.SSH_HOST }}":"${{ env.REMOTE_PROJECT_PATH }}" --delete
 
       - name: Creates Symbolic Link
@@ -76,5 +76,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script_stop: true
           script: |
-            pwd
             ln -sf "${{ env.REMOTE_PROJECT_PATH }}"/"${{ env.REMOTE_PROJECT_NAME }}" ~/domains/marcos-aparicio.xyz/public_html
