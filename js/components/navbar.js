@@ -162,32 +162,46 @@ if (customElements.get(COMPONENT_NAME) === undefined)
   customElements.define(COMPONENT_NAME, Navbar);
 
 // assuming each section corresponds to a nav item
-const sections = document.querySelectorAll("section");
+const sections = Array.from(document.querySelectorAll("section"));
 const navItems = document.querySelectorAll("nav-bar ul li");
 const main = document.querySelector("main");
-function sectionWatcher(section, index, sections) {
-  // padding to consider for the section to be considered active(since there could be a dead space between sections)
-  let padding = 150;
-  let condition =
-    main.scrollTop <= section.offsetTop + section.offsetHeight &&
-    main.scrollTop >= section.offsetTop;
-  condition =
-    section.index === "contact"
-      ? condition
-      : condition ||
-        (main.scrollTop + padding <= section.offsetTop + section.offsetHeight &&
-          main.scrollTop + padding >= section.offsetTop);
-
-  if (condition) {
-    navItems[index].classList.add("text-primary");
-  } else {
-    navItems[index].classList.remove("text-primary");
-  }
-}
-sections.forEach(sectionWatcher);
-window.onload = () => {
-  sections.forEach(sectionWatcher);
+const nav = document.querySelector("nav-bar");
+// Options for the IntersectionObserver
+const options = {
+  rootMargin: `-5px`, // Padding for intersection check
+  threshold: 0,
 };
-main.addEventListener("scroll", () => {
-  sections.forEach(sectionWatcher);
+
+const setScrollDirection = () => {
+  if (main.scrollTop > prevYPosition) {
+    direction = "down";
+  } else {
+    direction = "up";
+  }
+
+  prevYPosition = scrollRoot.scrollTop;
+  return direction;
+};
+// Callback function when intersection occurs
+const handleIntersection = ([entry]) => {
+  const sectionId = entry.target.id;
+  const targetIndex = sections.findIndex((section) => section.id === sectionId);
+
+  if (entry.isIntersecting) {
+    navItems.forEach((navItem, idx) => {
+      if (idx === targetIndex) {
+        navItem.classList.add("text-primary");
+        return;
+      }
+      navItem.classList.remove("text-primary");
+    });
+  }
+};
+// Create IntersectionObserver instance
+
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Loop over each section and observe its intersection
+sections.forEach((section) => {
+  observer.observe(section);
 });
