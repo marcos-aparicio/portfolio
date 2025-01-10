@@ -17,8 +17,7 @@ class Work extends HTMLElement {
       </div>
       <p class="px-4 xl:text-xl portrait:text-md landscape:text-lg landscape-mobile:!text-sm">
         While some of my work remains confidential, I’ve had the opportunity to work
-        extensively with <strong>React</strong> in front-end development and gain
-        exposure to backend systems using <strong>Django</strong>. However, my
+        extensively with <strong>React</strong> in front-end development and have exposure to CI/CD using <strong>Github Actions</strong>. However, my
         strong suit would be <strong>Laravel</strong> . Although I’m still early in
         my development journey, I’ve built a strong understanding of
         <strong>Git</strong> for version control, with repositories hosted on
