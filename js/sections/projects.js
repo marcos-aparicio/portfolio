@@ -27,15 +27,30 @@ class Projects extends HTMLElement {
                             'https://api.github.com/users/marcos-aparicio/repos',
                           );
                           const data = await request.json();
+                          console.log(data);
                           const output = data
                             .filter((p) => p.fork === false)
-                            .map((p) => ({
-                              name: p.name,
-                              description: p.description,
-                              topics: p.topics,
-                              html_url: p.html_url,
-                              homepage: p.homepage,
-                            }));
+                            .map((p) => {
+                              // assign sorting order to the projects(these will show first)
+                              const showOrder = {
+                                tasktango: 1,
+                                portfolio: 2,
+                              }
+                              const order = showOrder[p.name] || 3;
+
+                              const featured = /^tasktango|portfolio$/.test(p.name);
+
+                              return {
+                                name: p.name,
+                                description: p.description,
+                                topics: p.topics,
+                                html_url: p.html_url,
+                                homepage: p.homepage,
+                                order,
+                                featured
+                              };
+                            })
+                            .sort((a,b) => a.order - b.order);
                           return output;
                         };
                         projects = await fetchProjects();
@@ -47,10 +62,13 @@ class Projects extends HTMLElement {
             class="flex flex-col gap-4 justify-between py-4 px-6 rounded-xl shadow-lg md:max-w-sm xl:max-w-lg bg-base landscape-mobile:max-w-xs portrait:w-full portrait:max-w-full"
           >
             <div class="pointer-events-none">
-              <h2
-                x-text="project.name"
-                class="text-xl font-bold md:text-3xl landscape-mobile:text-md text-primary"
-              ></h2>
+              <div class="flex justify-between items-center">
+                <h2
+                  x-text="project.name"
+                  class="text-xl font-bold md:text-3xl landscape-mobile:text-md text-primary"
+                ></h2>
+                <i class="text-lg fa-solid fa-star" x-show="project.featured"></i>
+              </div>
               <hr class="my-2 h-0.5 border-t-0 bg-primary/30" />
               <p
                 class="text-sm landscape-mobile:text-xs md:text-md"
