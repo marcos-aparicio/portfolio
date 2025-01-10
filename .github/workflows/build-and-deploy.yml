@@ -66,14 +66,3 @@ jobs:
             apt-get update -y && apt-get install -y rsync
           fi
           rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" "${{ github.workspace }}"/"${{ env.REMOTE_PROJECT_NAME }}"  "${{ secrets.SSH_USERNAME }}"@"${{ secrets.SSH_HOST }}":"${{ env.REMOTE_PROJECT_PATH }}" --delete
-
-      - name: Creates Symbolic Link
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          script_stop: true
-          script: |
-            ln -sf "${{ env.REMOTE_PROJECT_PATH }}"/"${{ env.REMOTE_PROJECT_NAME }}" ~/domains/marcos-aparicio.xyz/public_html
