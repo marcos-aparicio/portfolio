@@ -17,11 +17,6 @@ const socialMediaLinks = [
     url: "https://www.linkedin.com/in/marcos-aparicio",
     name: "marcos-aparicio",
   },
-  {
-    icon: "fa-brands fa-mastodon",
-    url: "https://mastodon.social/@marcos_aparicio",
-    name: "@marcos_aparicio",
-  },
 ];
 Alpine.data("socialMediaLinks", () => ({ socialMediaLinks }));
 
